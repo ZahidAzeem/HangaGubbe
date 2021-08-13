@@ -33,6 +33,7 @@ namespace HangaGubbe
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSvar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelGubbe = new System.Windows.Forms.Label();
             this.pictureBoxGubbe = new System.Windows.Forms.PictureBox();
             this.pictureBoxMark = new System.Windows.Forms.PictureBox();
             this.textBoxVisa = new System.Windows.Forms.TextBox();
@@ -60,11 +61,13 @@ namespace HangaGubbe
             this.textBoxSvar.Name = "textBoxSvar";
             this.textBoxSvar.Size = new System.Drawing.Size(164, 45);
             this.textBoxSvar.TabIndex = 1;
+            this.textBoxSvar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxSvar.TextChanged += new System.EventHandler(this.textBoxSvar_TextChanged);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.Controls.Add(this.labelGubbe);
             this.panel1.Controls.Add(this.pictureBoxGubbe);
             this.panel1.Controls.Add(this.pictureBoxMark);
             this.panel1.Location = new System.Drawing.Point(79, 152);
@@ -72,19 +75,28 @@ namespace HangaGubbe
             this.panel1.Size = new System.Drawing.Size(300, 387);
             this.panel1.TabIndex = 2;
             // 
+            // labelGubbe
+            // 
+            this.labelGubbe.AutoSize = true;
+            this.labelGubbe.Location = new System.Drawing.Point(263, 3);
+            this.labelGubbe.Name = "labelGubbe";
+            this.labelGubbe.Size = new System.Drawing.Size(37, 25);
+            this.labelGubbe.TabIndex = 2;
+            this.labelGubbe.Text = "😊";
+            // 
             // pictureBoxGubbe
             // 
             this.pictureBoxGubbe.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGubbe.Image")));
-            this.pictureBoxGubbe.Location = new System.Drawing.Point(66, 3);
+            this.pictureBoxGubbe.Location = new System.Drawing.Point(94, 3);
             this.pictureBoxGubbe.Name = "pictureBoxGubbe";
-            this.pictureBoxGubbe.Size = new System.Drawing.Size(157, 100);
+            this.pictureBoxGubbe.Size = new System.Drawing.Size(71, 72);
             this.pictureBoxGubbe.TabIndex = 1;
             this.pictureBoxGubbe.TabStop = false;
             // 
             // pictureBoxMark
             // 
             this.pictureBoxMark.BackColor = System.Drawing.Color.Green;
-            this.pictureBoxMark.Location = new System.Drawing.Point(3, 309);
+            this.pictureBoxMark.Location = new System.Drawing.Point(1, 309);
             this.pictureBoxMark.Name = "pictureBoxMark";
             this.pictureBoxMark.Size = new System.Drawing.Size(297, 75);
             this.pictureBoxMark.TabIndex = 0;
@@ -96,15 +108,16 @@ namespace HangaGubbe
             this.textBoxVisa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxVisa.Location = new System.Drawing.Point(79, 558);
             this.textBoxVisa.Name = "textBoxVisa";
+            this.textBoxVisa.ReadOnly = true;
             this.textBoxVisa.Size = new System.Drawing.Size(300, 45);
             this.textBoxVisa.TabIndex = 3;
             // 
             // textBoxGissa
             // 
             this.textBoxGissa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxGissa.Location = new System.Drawing.Point(150, 621);
+            this.textBoxGissa.Location = new System.Drawing.Point(138, 624);
             this.textBoxGissa.Name = "textBoxGissa";
-            this.textBoxGissa.Size = new System.Drawing.Size(150, 45);
+            this.textBoxGissa.Size = new System.Drawing.Size(164, 45);
             this.textBoxGissa.TabIndex = 4;
             this.textBoxGissa.TextChanged += new System.EventHandler(this.textBoxGissa_TextChanged);
             // 
@@ -134,6 +147,7 @@ namespace HangaGubbe
             this.Text = "Hänga gubbe, typ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGubbe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMark)).EndInit();
             this.ResumeLayout(false);
@@ -151,6 +165,7 @@ namespace HangaGubbe
         private System.Windows.Forms.TextBox textBoxVisa;
         private System.Windows.Forms.TextBox textBoxGissa;
         private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label labelGubbe;
     }
 }
 

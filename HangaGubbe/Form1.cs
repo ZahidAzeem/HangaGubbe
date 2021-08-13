@@ -49,6 +49,9 @@ namespace HangaGubbe
 
         private void textBoxGissa_TextChanged(object sender, EventArgs e)
         {
+            if (textBoxGissa.Text.Length==0 || textBoxGissa.Text==" ")
+                return;
+            
             gissning = textBoxGissa.Text.ToUpper();
             int index = text.IndexOf(gissning);
 
@@ -77,6 +80,10 @@ namespace HangaGubbe
             if (!visa.Contains("?"))
             {
                 labelInfo.Text = "Kull, Du vann!";
+                textBoxSvar.Text = "";
+                textBoxGissa.Text = "";
+                textBoxGissa.Enabled = false;
+
             }
         }
 
