@@ -1,5 +1,6 @@
 # HangaGubbe
 Hänga Gubbe  - Hanging man
 
-Den är spelet är en del av programmering 1 uppgift. 
+Detta spelet är en hemuppgift av C# programmering 1. 
+
 
