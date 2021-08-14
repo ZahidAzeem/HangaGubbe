@@ -16,7 +16,7 @@ namespace HangaGubbe
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            textBoxSvar.Text = "";
         }
 
         public Form1()
@@ -28,6 +28,7 @@ namespace HangaGubbe
         {
             if (textBoxSvar.Text.Equals("")) return;
 
+            labelSvar.Text = "_ _ _ _ _ _";
             pictureBoxGubbe.Top = 0;
             textBoxGissa.Clear();
             textBoxVisa.Clear();
@@ -40,6 +41,13 @@ namespace HangaGubbe
                 text = textBoxSvar.Text.ToUpper();
                 visa = "??????";
                 textBoxGissa.Focus();
+                /*
+                svar logic
+                second, fourth and sixth characters should be- 
+                visible to other player
+                t.ex. flicka => f?i??a ... region => r?g??n
+                 */
+                labelSvar.Text= (text.First() + " _ " + text.Substring(2, 1) + " _ _ " + text.Last()).ToUpper();
             }
             else
             {
@@ -49,10 +57,11 @@ namespace HangaGubbe
 
         private void textBoxGissa_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxGissa.Text.Length==0 || textBoxGissa.Text==" ")
+            if (textBoxGissa.Text.Length==0 || textBoxGissa.Text==" ") // null eller användaren trycket spacebar
                 return;
             
             gissning = textBoxGissa.Text.ToUpper();
+
             int index = text.IndexOf(gissning);
 
             if (index<0)
@@ -82,7 +91,9 @@ namespace HangaGubbe
                 labelInfo.Text = "Kull, Du vann!";
                 textBoxSvar.Text = "";
                 textBoxGissa.Text = "";
+                labelSvar.Text = text.ToString().ToLower();
                 textBoxGissa.Enabled = false;
+                MessageBox.Show("Kull, Du vann!🎉👏👏👏", Application.ProductName.ToString() + " 😊");
 
             }
         }
